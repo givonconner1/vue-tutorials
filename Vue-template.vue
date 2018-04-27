@@ -19,39 +19,25 @@
       </div>
       <div class="demo">
           <ul>
-              <li><button v-on:click="show_steps = !show_steps; show_demo = false; show_source = false" class="menu-options">Step-by-Step</button></li>
-              <li><button v-on:click="show_steps = false; show_demo = false; show_source = !show_source"  class="menu-options">Source Code</button></li>
+              <li><button v-on:click="show_start = !show_start; show_demo = false; show_source = false" class="menu-options">Quick-Start</button></li>
+              <li><button v-on:click="show_start = false; show_demo = !show_demo; show_source = false"  class="menu-options">Demonstration</button></li>
           </ul>
       </div>
-      <div id="overview">
-<h2>Quickstart</h2>
-<br>
-1.  npm install -g @vue/cli<br>
-# or<br>
-yarn global add @vue/cli<br>
-2.  vue create my-project<br>
-<br>
-## Build Setup
-<br>
-``` bash
-<br>
-# install dependencies
-<br>
-npm install
-<br>
-# serve with hot reload at localhost:8080
-<br>
-npm run dev
-<br>
-# build for production with minification
-1.  npm install -g @vue/cli<br>
-# or<br>
-yarn global add @vue/cli<br>
-2.  vue create my-project<br>
-      </div>
       <div id="test">
-          <p v-if="show_steps">Testing Steps</p>
-          <p v-if="show_source">Testing Source Code</p>
+          <div id="quickstart" v-if="show_start">
+            <h2>Requirements:</h2><br>
+            <h4>1.<br>2.<br>3.<br></h4>
+            <h2>Write Each Command in a Command Terminal as Seen Below:</h2><br>
+            <h4>1. Install Vue</h4>
+            $ npm install -g vue-cli
+            <br><br>
+            <h4>2. Initialize a New Vue Project</h4>
+            $ vue init webpack-simple insert-project-name<br>
+            $ cd my-project<br>
+            $ npm install<br>
+            $ npm run dev<br>  
+          </div>
+          <div id="demonstration"></div>
       </div>
   </div>
 </template>
@@ -64,8 +50,8 @@ export default {
       author: 'Givon Conner',
       version: '1.0.0',
       show: null,
-      show_steps: false,
-      show_source: false,
+      show_start: false,
+      show_demo: false,
     }
   },
   mounted() {
@@ -94,9 +80,19 @@ body {
     padding: 5px;
     padding-bottom: 20px;
     margin-right: 60px;
+    position: sticky;
 }
 .navbar-menu a {
     color: white;
+}
+#vue-frame #quickstart {
+    font-size: 13px;
+}
+#vue-frame #quickstart h2{
+    font-size: 24px;
+}
+#vue-frame #quickstart h4 {
+    font-size: 18px;
 }
 #vue-frame .home-btn {
     border: 2px solid #333;
@@ -104,10 +100,8 @@ body {
     padding-left: 5px;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px #333;
-    margin-right: 1180px;
-}
-#overview {
-    font-size: 13px;
+    margin-right: 1192px;
+    position: sticky;
 }
 #vue-frame .home-btn:hover {
     border: 2px solid gray;
@@ -115,14 +109,14 @@ body {
     padding-left: 5px;
     border-radius: 8px;
     box-shadow: 2px 2px 2px 1px #333;
-    margin-right: 1235px;
 }
-.logo {
-    position: static;
-    top: 100px;
+#vue-frame .logo {
+    margin-top: 100px;
+    margin-left: 500px;
+    display: flex;
 }
 .demo {
-    position: relative;
+    position: static;
     text-align: left;
     top: 150px;
     margin-left: 610px;
@@ -132,7 +126,6 @@ body {
 #vue-frame .menu-options {
   color: #42b983;
   background-color: rgb(0, 0, 0);
-  display: inline;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 15px;
   line-height: 25px;
@@ -146,6 +139,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   margin-left: 30px;
+  margin-top: 70px;
 }
 #vue-frame .btn-secondary {
   color: white;
@@ -176,12 +170,6 @@ body {
 
 #vue-frame .demo ul li button:hover {
     color: white;
-}
-
-#vue-frame #overview {
-    margin-top: 200px;
-    margin-left: 40px;
-    text-align: left;
 }
 #vue-frame #test {
     margin-top: 50px;

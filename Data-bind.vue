@@ -62,7 +62,7 @@ export default {
   height: 100%;
   letter-spacing: 1px;
 }
-.navbar-menu {
+#data-bind .navbar-menu {
     display: -webkit-flex; /* Safari */
     -webkit-align-items: center; /* Safari 7.0+ */
     display: flex;
@@ -90,14 +90,15 @@ export default {
     box-shadow: 2px 2px 2px 1px #333;
     margin-right: 1253px;
 }
-.logo {
-    position: relative;
-    top: 100px;
+#data-bind .logo {
+    margin-top: 100px;
+    margin-left: 510px;
+    display: flex;
 }
-.demo {
+#data-bind .demo {
     position: relative;
     text-align: left;
-    top: 150px;
+    top: 50px;
     margin-left: 610px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -105,7 +106,6 @@ export default {
 #data-bind .menu-options {
   color: #42b983;
   background-color: rgb(0, 0, 0);
-  display: inline;
   font-family: Verdana, Geneva, sans-serif;
   font-size: 15px;
   line-height: 25px;

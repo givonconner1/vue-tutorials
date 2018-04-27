@@ -61,7 +61,7 @@ export default {
     padding-bottom: 20px;
     
 }
-.navbar-menu a {
+#help .navbar-menu a {
     color: white;
 }
 #help .home-btn {
@@ -79,7 +79,7 @@ export default {
     border-radius: 8px;
     box-shadow: 2px 2px 2px 1px #333;
 }
-.logo {
+#help .logo {
     position: relative;
     top: 100px;
 }

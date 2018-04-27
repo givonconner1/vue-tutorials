@@ -12,15 +12,37 @@
               <li><a href="help.html">Help</a></li>
           </ul>
       </div>
+      <transition name="fade">
+        <a v-if="show"><img class="back-img" src="./assets/logo.png"></a>
+      </transition>
+
       <div class="logo">
-        <transition name ="fade">
-          <h2 id="about-content" v-if="show">{{ msg }}</h2>
-        </transition>
+        <h2 id="about-content">{{ msg }}</h2>
       </div>
         <div id="about-content">
-            <p>...Created by <b><i>Givon Conner</i></b> in 2018 as a Web Developer Student Assistant for UNT's Administrative IT Services,<br>"Vue.js Tutorials" was created to
-               assist the full-time Web-Developers in better understanding the Vue.js framework.
-            </p>
+            <ul>
+                <li>
+                    <h5>Introduction:</h5>
+                    <i>"Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
+
+                    If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.
+
+                    If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks."</i>
+                </li>
+                <li><br>
+                    <h5>In My Own Word's:</h5>
+                                    <li>
+                    <h5>Introduction:</h5>
+                    <i>"Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.
+
+                    If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.
+
+                    If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks."</i>
+                </li>
+                <li><br>
+                    <h5>In My Own Word's:</h5>
+                </li>
+            </ul>
         </div>
         <h2 id="about-content">Current Tutorials</h2>
         <ul id="about-content">
@@ -62,15 +84,25 @@ export default {
   width: 100%;
   height: 100%;
   letter-spacing: 1px;
+  background-size: 400px;
 }
-.navbar-menu {
+#about .back-img {
+    opacity: 0.6;
+    left: 0;
+    top: 0;
+    height: 20%;
+    opacity: 0.6;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#about .navbar-menu {
     display: -webkit-flex; /* Safari */
     -webkit-align-items: center; /* Safari 7.0+ */
     display: flex;
     align-items: center;
     padding: 5px;
-    padding-bottom: 20px;
-    
+    padding-bottom: 20px;    
 }
 .navbar-menu a {
     color: white;
@@ -81,7 +113,7 @@ export default {
     padding-left: 5px;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px #333;
-    margin-right: 1253px;
+    margin-right: 1193px;
 }
 #about .home-btn:hover {
     border: 2px solid gray;
@@ -91,7 +123,7 @@ export default {
     box-shadow: 2px 2px 2px 1px #333;
 }
 #about .logo {
-    position: sticky;
+    position: static;
     top: 100px;
 }
 #about-content {

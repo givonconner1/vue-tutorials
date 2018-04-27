@@ -67,7 +67,7 @@ export default {
   border: none;
 }
 
-#navbar-menu {
+#app #navbar-menu {
   background: black;
   text-align: center;
   margin: 20px;
